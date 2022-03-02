@@ -10,8 +10,8 @@ import (
 func main() {
 	fmt.Println("Iniciando servidor rest com go")
 	model.Personalidades = []model.Personalidade{
-		{Nome: "Nome 1", Historia: "História 1"},
-		{Nome: "Nome 2", Historia: "História 2"},
+		{Id: 1, Nome: "Nome 1", Historia: "História 1"},
+		{Id: 2, Nome: "Nome 2", Historia: "História 2"},
 	}
 
 	route.HandleRequest()
