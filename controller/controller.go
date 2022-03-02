@@ -56,3 +56,19 @@ func DeletePersonalidade(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(personalidade)
 }
+
+func EditarPersonalidade(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["id"]
+	idConvertido, err := strconv.Atoi(id)
+	if err != nil {
+		panic(err.Error())
+	}
+
+	var personalidade model.Personalidade
+	database.DB.First(&personalidade, idConvertido)
+	json.NewDecoder(r.Body).Decode(&personalidade)
+
+	database.DB.Save(&personalidade)
+	json.NewEncoder(w).Encode(personalidade)
+}
