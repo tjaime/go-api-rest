@@ -9,5 +9,6 @@ import (
 
 func HandleRequest() {
 	http.HandleFunc("/", controller.Home)
+	http.HandleFunc("/api/personalidades", controller.PagePersonalidades)
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }

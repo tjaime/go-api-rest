@@ -3,10 +3,16 @@ package main
 import (
 	"fmt"
 
+	"github.com/tjaime/go-api-rest/model"
 	"github.com/tjaime/go-api-rest/route"
 )
 
 func main() {
 	fmt.Println("Iniciando servidor rest com go")
+	model.Personalidades = []model.Personalidade{
+		{Nome: "Nome 1", Historia: "História 1"},
+		{Nome: "Nome 2", Historia: "História 2"},
+	}
+
 	route.HandleRequest()
 }
