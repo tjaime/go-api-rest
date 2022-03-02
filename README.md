@@ -8,4 +8,8 @@ fix -> go env -w GO111MODULE=on
 #URLs
 http://localhost:8000/api/personalidades
 
+#Setup dependences
+https://github.com/gorilla/mux
+https://gorm.io/index.html
+
 .
