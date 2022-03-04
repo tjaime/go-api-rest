@@ -71,4 +71,5 @@ func EditarPersonalidade(w http.ResponseWriter, r *http.Request) {
 
 	database.DB.Save(&personalidade)
 	json.NewEncoder(w).Encode(personalidade)
+
 }

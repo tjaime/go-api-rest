@@ -6,11 +6,12 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/tjaime/go-api-rest/controller"
+	"github.com/tjaime/go-api-rest/middleware"
 )
 
 func HandleRequest() {
 	route := mux.NewRouter()
-
+	route.Use(middleware.ContentTypeJson)
 	route.HandleFunc("/", controller.Home)
 	route.HandleFunc("/api/personalidades", controller.PagePersonalidades).Methods("Get")
 	route.HandleFunc("/api/personalidades/{id}", controller.FindPersonalidade).Methods("Get")
